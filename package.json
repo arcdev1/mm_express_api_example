@@ -1,0 +1,48 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm run -s build",
+    "start": "node dist/index.js",
+    "clean": "rimraf dist",
+    "build": "npm run clean && mkdir -p dist && babel src -s -D -d dist"
+  },
+  "author": "Bill Sourour (Dev Mastery)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.12",
+    "mongoose": "^5.4.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "faker": "^4.1.0",
+    "jest": "^23.6.0",
+    "regenerator-runtime": "^0.13.1",
+    "rimraf": "^2.6.3"
+  },
+  "jest": {
+    "verbose": true,
+    "testRegex": ".spec.js"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "node": "10.8.0"
+          }
+        }
+      ]
+    ]
+  }
+}
