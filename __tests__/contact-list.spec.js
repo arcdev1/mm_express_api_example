@@ -102,7 +102,7 @@ describe('Contacts Repository', async () => {
     return contactList.remove(dummyContact)
   })
 
-  it.only('finds a contact by id', async () => {
+  it('finds a contact by id', async () => {
     const dummyContact = makeFakeContact()
     const { created } = await contactList.add(dummyContact)
     const result = await contactList.findById(created)
