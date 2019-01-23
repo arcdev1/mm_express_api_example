@@ -29,10 +29,10 @@ export default function makeContactList ({ database }) {
   }
 
   async function add ({ contactId, ...contact }) {
+    const db = await database
     if (contactId) {
       contact._id = db.makeId(contactId)
     }
-    const db = await database
     const { result, ops } = await db
       .collection('contacts')
       .insertOne(contact)
@@ -73,10 +73,11 @@ export default function makeContactList ({ database }) {
   }
 
   async function remove ({ contactId, ...contact }) {
+    const db = await database
     if (contactId) {
       contact._id = db.makeId(contactId)
     }
-    const db = await database
+
     const { result } = await db.collection('contacts').deleteMany(contact)
     return result.n
   }
