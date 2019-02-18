@@ -26,3 +26,5 @@ mongod
 ```bash
 npm run start
 ```
+## Troubleshooting
+To get the unique email error to work like in the video, you need to add a unique constraint on the email field in MongoDB as described at: https://docs.mongodb.com/manual/core/index-unique/
