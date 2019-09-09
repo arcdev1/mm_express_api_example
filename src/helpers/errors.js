@@ -20,7 +20,7 @@ export class InvalidPropertyError extends Error {
 
 export class RequiredParameterError extends Error {
   constructor (param) {
-    super(`${param} can not be null or underfined.`)
+    super(`${param} can not be null or undefined.`)
 
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, RequiredParameterError)
