@@ -11,7 +11,7 @@
     "build": "npm run clean && mkdir -p dist && babel src -s -D -d dist"
   },
   "author": "Bill Sourour (Dev Mastery)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
